@@ -41,7 +41,7 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>test-compile</id>
+                        <id>com.app.coffeeShop.test-compile</id>
                         <phase>test-compile</phase>
                         <goals>
                             <goal>test-compile</goal>
