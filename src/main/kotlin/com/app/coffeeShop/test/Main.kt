@@ -62,6 +62,7 @@ fun main(args: Array<String>) {
                                 println("Ice Cream Added")
                             }
                         }
+                        order.getOrderDetails()
                     }
                 } else {
                     println("Kindly choose 'Update Order' for modification")
@@ -78,27 +79,28 @@ fun main(args: Array<String>) {
                                 println(util.printCoffee())
                                 print("Which Coffee ID?: ")
                                 coffeeID = sc.nextInt()
-                                print("Additional Quantity?: ")
+                                if(qtyCoffee != 0) print("Additional Quantity?: ")
+                                else print("Quantity?: ")
                                 qtyCoffee += sc.nextInt()
                                 util.getCoffeeById(coffeeID)?.let { coffee ->
                                     order.orderCoffee(coffee, qtyCoffee)
                                 } ?: continue@WhileLoop
-                                println("Order Modified")
-
                             }
 
                             2 -> {
                                 println(util.printIceCream())
                                 print("Which Ice Cream?: ")
                                 iceCreamID = sc.nextInt()
-                                print("Additional Quantity?: ")
+                                if(qtyIceCream != 0) print("Additional Quantity?: ")
+                                else print("Quantity?: ")
                                 qtyIceCream += sc.nextInt()
                                 util.getIceCreamById(iceCreamID)?.let { iceCream ->
                                     order.orderIceCream(iceCream, qtyIceCream)
                                 } ?: continue@WhileLoop
-                                println("Order Modified")
                             }
                         }
+                        println("Order Modified")
+                        order.getOrderDetails()
                     }
                 } else {
                     println("Kindly choose 'Order Something' for initial order")
