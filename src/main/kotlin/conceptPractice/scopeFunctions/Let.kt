@@ -1,7 +1,8 @@
 package conceptPractice.scopeFunctions
 
 import java.util.*
-import kotlin.reflect.typeOf
+
+// used to prevent NullPointerException
 
 fun main(args: Array<String>) {
     val name: String? = null
